@@ -16,6 +16,8 @@ namespace Filedialog1
         {
             InitializeComponent();
             button1.Text = Resource1.Add;
+            button2.Text = Resource1.Save;
+            button3.Text = Resource1.Load;
         }
 
         private void button1_Click(object sender, EventArgs e)

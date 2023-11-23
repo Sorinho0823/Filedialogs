@@ -68,5 +68,23 @@ namespace Filedialog1 {
                 return ResourceManager.GetString("Add", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megnyítás.
+        /// </summary>
+        internal static string Load {
+            get {
+                return ResourceManager.GetString("Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mentés.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
     }
 }
