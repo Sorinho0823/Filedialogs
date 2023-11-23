@@ -34,5 +34,15 @@ namespace Filedialog1
                 MessageBox.Show("nem írtál be semmit!"); // ez így nem jó, de most így hagyom
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog Svf = new SaveFileDialog();
+            Svf.ShowDialog();
+            if (DialogResult == )
+            {
+
+            }
+        }
     }
 }
