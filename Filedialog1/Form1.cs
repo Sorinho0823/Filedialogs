@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,22 +16,39 @@ namespace Filedialog1
         public Form1()
         {
             InitializeComponent();
-            button1.Text = Resource1.Add;
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                
-                string BeirtSzoveg = textBox1.Text;
-                listBox1.Items.Add(BeirtSzoveg);
-            }
-            catch (Exception)
-            {
 
-                MessageBox.Show("nem írtál be semmit!"); // ez így nem jó, de most így hagyom
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(ofd.FileName);
+                richTextBox1.Text = sr.ReadToEnd();
+                sr.Close();
             }
+            
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog ();
+            if (sfd.ShowDialog() == DialogResult.OK )
+            {
+                StreamWriter sw = new StreamWriter(sfd.FileName);
+                sw.Write(richTextBox1.Text);
+                sw.Close();
+            }
+            
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
         }
     }
+
+    
 }
